@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/yellow"
+    tools:context=".MainActivity">
+
+
+    <LinearLayout
+        android:id="@+id/contentContainer"
+        android:layout_width="327dp"
+        android:layout_height="341dp"
+        android:layout_margin="2dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.57"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.424">
+
+        <!-- BiBo Logo -->
+        <LinearLayout
+            android:id="@+id/logoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="176dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="161dp"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/baloo"
+                android:text="B"
+                android:textColor="#7F97E3"
+                android:textSize="130sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="162dp"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/baloo"
+                android:letterSpacing="-0.05"
+                android:text="i"
+                android:textColor="#70D6FF"
+                android:textSize="130sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="162dp"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/baloo"
+                android:letterSpacing="-0.05"
+                android:text="B"
+                android:textColor="#90BE6D"
+                android:textSize="130sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="160dp"
+                android:layout_margin="2dp"
+                android:fontFamily="@font/baloo"
+                android:letterSpacing="-0.05"
+                android:text="O"
+                android:textColor="#F48E90"
+                android:textSize="130sp" />
+        </LinearLayout>
+
+        <!-- Subtitle -->
+
+        <!-- Button -->
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="288dp"
+            android:layout_height="52dp"
+            android:layout_margin="4dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/poppins"
+            android:text="Masayang matuto ng Filipino kasama ang mga Bibo!"
+            android:textAlignment="center"
+            android:textAppearance="@style/TextAppearance.AppCompat.Small"
+            android:textColor="@color/gray"
+            android:textStyle="bold" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonStart"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:backgroundTint="#4CC9F0"
+            android:text="Simulan natin!"
+            android:textColor="@color/white"
+            android:fontFamily="@font/poppins"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textView" />
+    </LinearLayout>
+
+    <ImageView
+
+        android:layout_width="464dp"
+        android:layout_height="238dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/sprinkles"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.814"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+
+        android:layout_width="494dp"
+        android:layout_height="282dp"
+        android:layout_marginTop="592dp"
+        android:src="@drawable/bibofriends"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.289"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

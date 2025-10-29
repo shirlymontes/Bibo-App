@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- When pressed -->
+    <item android:state_pressed="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/blue" />
+            <corners android:radius="20dp" />
+            <padding
+                android:left="10dp"
+                android:top="10dp"
+                android:right="10dp"
+                android:bottom="10dp" />
+            <stroke android:width="2dp" android:color="@color/blue" />
+        </shape>
+    </item>
+
+    <!-- Default / unpressed -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/yellow" />
+            <corners android:radius="20dp" />
+            <!-- Soft drop shadow effect -->
+            <shadowColor android:color="#55000000" /> <!-- semi-transparent black -->
+            <stroke android:width="2dp" android:color="@color/yellow" />
+        </shape>
+    </item>
+</selector>
