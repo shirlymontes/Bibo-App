@@ -3,202 +3,369 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/yellow"
+    android:id="@+id/main"
+    android:background="@color/white"
     tools:context=".HomeAge3to5">
 
-    <!-- GREETING CARD -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardGreeting"
-        android:layout_width="0dp"
+
+    <!-- HEADER GREETING -->
+    <LinearLayout
+        android:id="@+id/greetingSection"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:layout_marginHorizontal="30dp"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="6dp"
-        android:background="@color/white"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        android:orientation="horizontal"
+        android:paddingTop="50dp"
+        android:paddingHorizontal="30dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/avatarImage"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/avatar"
+            android:layout_marginEnd="12dp"/>
+
+        <TextView
+            android:id="@+id/textGreeting"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="12dp">
+            android:text="Magandang Araw, ka-Bibo!"
+            android:textColor="@color/gray"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/poppins"/>
+    </LinearLayout>
 
-            <TextView
-                android:id="@+id/textGreeting"
+
+
+    <!-- ARAL NI BIBO SECTION -->
+    <LinearLayout
+        android:id="@+id/headerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="30dp"
+        android:paddingTop="10dp"
+
+        app:layout_constraintTop_toBottomOf="@id/greetingSection">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardGreeting"
+            android:layout_width="match_parent"
+            android:layout_height="179dp"
+            android:layout_marginTop="10dp"
+            app:cardBackgroundColor="#FFEDB1"
+            app:cardCornerRadius="20dp"
+            android:elevation="0dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:cardPreventCornerOverlap="false">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="8dp"
-                android:fontFamily="@font/poppins"
-                android:gravity="center"
-                android:text="Magandang araw, ka-Bibo!"
-                android:textColor="@color/green"
-                android:textSize="18sp"
-                android:textStyle="bold" />
+                android:layout_height="match_parent"
+                android:padding="20dp"   >
+
+                <ImageView
+                    android:id="@+id/biboImage"
+                    android:layout_width="155dp"
+                    android:layout_height="95dp"
+                    android:layout_marginStart="4dp"
+                    android:scaleType="fitCenter"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.159"
+                    app:srcCompat="@drawable/bibogreen" />
+
+                <TextView
+                    android:id="@+id/aralTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Aral ni Bibo"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    tools:layout_editor_absoluteX="24dp"
+                    tools:layout_editor_absoluteY="122dp"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    android:id="@+id/aralText"
+                    android:layout_width="151dp"
+                    android:layout_height="87dp"
+                    android:layout_marginBottom="28dp"
+                    android:fontFamily="@font/poppins"
+                    android:text="“Ang batang masipag, ay pinagpapala.”"
+                    android:textColor="@color/gray"
+                    android:textSize="16sp"
+
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toTopOf="@id/aralTitle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@id/biboImage" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+
+    <!-- THREE CARDS: TITIK, NUMERO, SALITA -->
+    <LinearLayout
+        android:id="@+id/cardRow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="10dp"
+        app:layout_constraintTop_toBottomOf="@id/headerLayout"
+        >
+
+        <!-- ABC -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTitik"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:layout_margin="6dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="#CDF1FF"
+            android:elevation="0dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:cardPreventCornerOverlap="false">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="20dp"
-                android:gravity="center_vertical"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:elevation="0dp">
 
                 <ImageView
-                    android:id="@+id/imageView"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/abc"/>
+
+                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="12dp"
-                    android:scaleType="fitCenter"
-                    app:srcCompat="@drawable/bibogreen" />
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:id="@+id/aralText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/poppins"
-                        android:gravity="center"
-                        android:text="“Ang batang masipag, ay pinagpapala.”"
-                        android:textColor="@color/gray"
-                        android:textSize="14sp"
-                        android:textStyle="italic" />
-
-                    <TextView
-                        android:id="@+id/aralTitle"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="20dp"
-                        android:fontFamily="@font/poppins"
-                        android:gravity="center"
-                        android:text="Aral ni Bibo"
-                        android:textColor="@color/gray"
-                        android:textSize="12sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
+                    android:fontFamily="@font/poppins"
+                    android:text="Mga Titik"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
             </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
 
-    <!-- CARDS ROW: MGA TITIK & MGA SALITA -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardTitik"
-        android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:background="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="6dp"
-        app:layout_constraintTop_toBottomOf="@id/cardGreeting"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/cardSalita"
-        app:layout_constraintHorizontal_chainStyle="spread"
-        app:layout_constraintHorizontal_weight="1"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="30dp"
-        android:layout_marginEnd="8dp">
+        </androidx.cardview.widget.CardView>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:padding="12dp">
 
-            <ImageView
-                android:id="@+id/imageView2"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="8dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/abc" />
+        <!-- NUMBERS -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardNumero"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:layout_margin="6dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="#CDF1FF"
+            android:elevation="0dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:cardPreventCornerOverlap="false">
 
-            <TextView
-                android:id="@+id/textTitik"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Mga Titik"
-                android:textColor="@color/gray"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:orientation="vertical">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardSalita"
-        android:layout_width="0dp"
-        android:layout_height="220dp"
-        android:background="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="6dp"
-        app:layout_constraintTop_toBottomOf="@id/cardGreeting"
-        app:layout_constraintStart_toEndOf="@id/cardTitik"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="1"
-        android:layout_marginTop="30dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="30dp">
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/numbers"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="12dp">
+                <TextView
+                    android:layout_width="99dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Mga Numero"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-            <ImageView
-                android:id="@+id/imageView3"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginBottom="8dp"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/abc" />
 
-            <TextView
-                android:id="@+id/textSalita"
+        <!-- SALITA -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardSalita"
+            android:layout_width="0dp"
+            android:layout_height="140dp"
+            android:layout_weight="1"
+            android:layout_margin="6dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="#CDF1FF"
+            android:elevation="0dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="false"
+            app:cardPreventCornerOverlap="false">
+
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
+                android:layout_height="match_parent"
                 android:gravity="center"
-                android:text="Mga Salita"
-                android:textColor="@color/gray"
-                android:textSize="14sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:orientation="vertical"
+                android:elevation="0dp"
+                app:cardUseCompatPadding="false"
+                app:cardPreventCornerOverlap="false">
+
+                <ImageView
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    app:srcCompat="@drawable/salita"/>
+
+                <TextView
+                    android:layout_width="91dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins"
+                    android:text="Mga Salita"
+                    android:textColor="@color/gray"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+
+    <!-- SECTION: MGA KUWENTO -->
+    <LinearLayout
+        android:id="@+id/kuwentoHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="30dp"
+        android:paddingTop="10dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/cardRow">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mga Kuwento"
+            android:textColor="@color/gray"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins"/>
+
+        <TextView
+            android:id="@+id/seeAllKuwento"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ipakita lahat ➜"
+            android:textColor="#696967"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:fontFamily="@font/poppins"/>
+    </LinearLayout>
+
+
 
     <!-- KUWENTO CARD -->
     <androidx.cardview.widget.CardView
         android:id="@+id/cardKuwento"
-        android:layout_width="0dp"
-        android:layout_height="300dp"
-        android:background="@color/white"
-        app:cardCornerRadius="20dp"
-        app:cardElevation="8dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
         android:layout_marginHorizontal="30dp"
-        app:layout_constraintTop_toBottomOf="@id/cardTitik"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#CDF1FF"
+        android:elevation="0dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintTop_toBottomOf="@id/kuwentoHeader">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins"
+            android:gravity="center"
+            android:text="Kuwento"
+            android:textColor="@color/gray"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </androidx.cardview.widget.CardView>
+
+
+
+    <!-- AWIT AT TULA SECTION -->
+    <LinearLayout
+        android:id="@+id/awitHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="30dp"
+        android:paddingTop="10dp"
+        android:gravity="center_vertical"
+        app:layout_constraintTop_toBottomOf="@id/cardKuwento">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Mga Awit at Tula"
+            android:textColor="@color/gray"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:fontFamily="@font/poppins"/>
+
+        <TextView
+            android:id="@+id/seeAllAwit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ipakita lahat ➜"
+            android:textColor="#696967"
+            android:textStyle="bold"
+            android:textSize="10sp"
+            android:fontFamily="@font/poppins"/>
+    </LinearLayout>
+
+
+
+    <!-- AWIT AT TULA CARD -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardAwit"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginHorizontal="30dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#CDF1FF"
+        android:elevation="0dp"
+        app:cardElevation="0dp"
+        app:cardUseCompatPadding="false"
+        app:cardPreventCornerOverlap="false"
+        app:layout_constraintTop_toBottomOf="@id/awitHeader">
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:text="Kuwento"
+            android:text="Awit at Tula"
+            android:textColor="@color/gray"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:fontFamily="@font/poppins"
-            android:textColor="@color/gray" />
+            android:fontFamily="@font/poppins"/>
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
